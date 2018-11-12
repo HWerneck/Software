@@ -1,2 +1,2 @@
-# Software.Examples
+# Software Examples
 Repository with complete software examples.
