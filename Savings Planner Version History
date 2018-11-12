@@ -1,0 +1,5 @@
+Savings Planner Version History
+
+1.0 - Savings Planner
+    - Software calculates the total in a saving account after a period measured in months,
+      using the initial value already in the account, a monthly added value and an income fee.

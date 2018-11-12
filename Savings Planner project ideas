@@ -1,0 +1,16 @@
+Ferramentas, funcionalidades, recursos e características para próximas versões:
+- GUI básica
+    - GUI avançada
+- Acertar arrendodamento e truncamento para duas casas decimais
+    Para truncamento: "#include <iomanip>" e "std::cout << std::setprecision(n);", sendo n o número de dígitos a serem mostrados ao todo, antes e depois da vírgula.
+- Opção de vírgula ou ponto
+- Opção de moeda (real, dólar, euro, etc)
+- Mais línguas (português, inglês, italiano, alemão, etc)
+- Previsão de tempo e/ou quantidade de aplicação para um valor total desejado
+    Exemplo: "Apliquei 10 reais, sem adicionar nada mensalmente, em quanto tempo terei 20 reais?" ou "Apliquei 10 reais, quanto terei que depositar mensalmente para ter 20 reais em 12 meses?"
+- Rendimento da poupança simulado com taxa fixa ou baseada na taxa atual (ou ainda na média das taxas dos últimos n meses)
+    Exemplo: "Taxa de rendimento de 0,5%/mês" ou "Taxa de rendimento de 0,4% + taxa SELIC".
+- Valor a ser adicionado mensalmente fixo ou variando de forma programada ou aleatória dentro de uma faixa pré-definida
+    Exemplo: "Depósito mensal de R$1000,00" ou "Depósito mensal de R$ 100,00, R$ 200,00 e R$ 300,00 a cada três meses" ou "Depósito mensal começando em R$ 100,00 e aumentando em R$ 100,00 todo mês." ou "Depósito mensal ficará sempre entre R$ 1000,00 e R$ 1200,00."
+- Definição de quando o valor mensal será adicionado no mês (começo, fim do mês, etc.)
+    Exemplo: "Depósito mensal realizado todo dia 20."
