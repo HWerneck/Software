@@ -17,6 +17,7 @@ public:
 private slots:
     void createMainScreen();
     void createLayouts();
+    void showMessage();
 
 private:
     QWidget *widget;
