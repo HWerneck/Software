@@ -1,10 +1,6 @@
-#include <QtGui>
 #include <QWidget>
-#include <QStackedWidget>
 #include <QPushButton>
-#include <QRadioButton>
 #include <QHBoxLayout>
-#include <QVBoxLayout>
 #include <QMessageBox>
 #include "mainwindow.h"
 
@@ -14,11 +10,11 @@ MainWindow::MainWindow(QWidget *parent)
     createMainScreen();
     createLayouts();
 
-    connect(add_button, SIGNAL(clicked()), this, SLOT());
-    connect(edit_button, SIGNAL(toggled(bool)), this, SLOT(setVisible(bool)));
+    connect(add_button, SIGNAL(clicked()), this, SLOT(showMessage()));
+    connect(edit_button, SIGNAL(clicked()), this, SLOT(close()));
     
     widget->setLayout(layout);
-    setWindowTitle(tr("Pokemon Database"));
+    setWindowTitle(tr("Modularization"));
     setCentralWidget(widget);
 }
 
@@ -32,9 +28,6 @@ void MainWindow::createMainScreen()
     widget = new QWidget();
     add_button = new QPushButton(tr("A"));
     edit_button = new QPushButton(tr("E"));
-    
-    Pokemon_radioButton = new QRadioButton();
-    Trainer_radioButton = new QRadioButton();
     
     //layouts
     //connects
@@ -50,4 +43,9 @@ void MainWindow::createLayouts()
     
     //layouts
     //connects
+}
+
+void MainWindow::showMessage()
+{
+    QMessageBox::about(this, tr("Modularization"), tr("It worked!"));
 }
