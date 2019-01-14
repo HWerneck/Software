@@ -4,6 +4,7 @@
 #include <QMainWindow>
 
 class QWidget;
+class QLabel;
 class QLineEdit;
 class QComboBox;
 class QPushButton;
@@ -23,8 +24,11 @@ private slots:
 private:
     QWidget *widget;
     
+    QLabel *name_label;
     QLineEdit *name_line;
+    QLabel *email_label;
     QLineEdit *email_line;
+    QLabel *phone_label;
     QLineEdit *phone_line;
     QComboBox *phone_type_combobox;
     
