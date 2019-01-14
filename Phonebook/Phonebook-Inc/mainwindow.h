@@ -4,6 +4,8 @@
 #include <QMainWindow>
 
 class QWidget;
+class QLineEdit;
+class QComboBox;
 class QPushButton;
 
 class MainWindow : public QMainWindow
@@ -21,12 +23,14 @@ private slots:
 private:
     QWidget *widget;
     
-    QPushButton *Pokemon_add_button;
-    QPushButton *Pokemon_edit_button;
-    QPushButton *Pokemon_delete_button;
-    QPushButton *Pokemon_save_button;
-    QPushButton *Pokemon_cancel_button;
-    QPushButton *Pokemon_sort_button;
+    QLineEdit *name_line;
+    QLineEdit *email_line;
+    QLineEdit *phone_line;
+    QComboBox *phone_type_combobox;
+    
+    QPushButton *edit_button;
+    QPushButton *save_button;
+    QPushButton *cancel_button;
 };
 
 #endif // MAINWINDOW_H
