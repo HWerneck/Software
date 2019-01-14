@@ -1,5 +1,7 @@
 #include <QtGui>
 #include <QWidget>
+#include <QLineEdit>
+#include <QComboBox>
 #include <QPushButton>
 #include <QHBoxLayout>
 #include <QVBoxLayout>
@@ -11,12 +13,17 @@ MainWindow::MainWindow(QWidget *parent)
 {
     widget = new QWidget();
     
-    Pokemon_add_button = new QPushButton(tr("A"));
-    Pokemon_edit_button = new QPushButton(tr("E"));
-    Pokemon_delete_button = new QPushButton(tr("D"));
-    Pokemon_save_button = new QPushButton(tr("S"));
-    Pokemon_cancel_button = new QPushButton(tr("C"));
-    Pokemon_sort_button = new QPushButton(tr("O"));
+    name_line = new QLineEdit();
+    email_line = new QLineEdit();
+    phone_line = new QLineEdit();
+    phone_type_combobox = new QComboBox();
+    
+    phone_type_combobox.setEditable(false);
+    
+    
+    edit_button = new QPushButton(tr("E"));
+    save_button = new QPushButton(tr("S"));
+    cancel_button = new QPushButton(tr("C"));
 
     QHBoxLayout *layoutUp = new QHBoxLayout;
     layoutUp->addStretch();
