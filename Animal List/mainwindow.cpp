@@ -17,17 +17,17 @@ MainWindow::MainWindow(QWidget *parent)
     list->addItem(tr("Dragon"));
     
     id_line = new QLineEdit();
-    id_line.setMinimumSize(50,30);
-    id_line.setMaximumSize(50,30);
+    id_line->setMinimumSize(50,30);
+    id_line->setMaximumSize(50,30);
     name_line = new QLineEdit();
-    name_line.setMinimumSize(250,30);
-    name_line.setMaximumSize(250,30);
+    name_line->setMinimumSize(250,30);
+    name_line->setMaximumSize(250,30);
     species_line = new QLineEdit();
-    species_line.setMinimumSize(250,30);
-    species_line.setMaximumSize(250,30);
+    species_line->setMinimumSize(250,30);
+    species_line->setMaximumSize(250,30);
     paw_line = new QLineEdit();
-    paw_line.setMinimumSize(50,30);
-    paw_line.setMaximumSize(50,30);
+    paw_line->setMinimumSize(50,30);
+    paw_line->setMaximumSize(50,30);
 
     //connect(list, SIGNAL(currentRowChanged(int)), stacked, SLOT(setCurrentIndex(int)));
 
@@ -49,4 +49,19 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
 
+}
+
+void MainWindow::saveButton_clicked()
+{
+    save_button->hide();
+    cancel_button->hide();
+
+    animal.setID(id_line->text()->toInt());
+    animal.setName(name_line->text());
+    animal.setSpecies(species_line->text());
+    animal.setPawNumber(paw_line->text()->toInt());
+    
+    //disable QLineEdits
+    
+    edit_button->show();
 }
