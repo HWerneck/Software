@@ -1,10 +1,10 @@
-#include <string>
+#include <QString>
 
 class Animal
 {
     int id;
-    std::string name;
-    std::string species;
+    QString name;
+    QString species;
     int paw_number;
 
 public:
@@ -21,26 +21,29 @@ public:
         return id;
     }
     
-    void setID()
+    void setID(animal_id)
     {
+        id = animal_id;
     }
     
-    std::string getName()
+    QString getName()
     {
         return name;
     }
     
-    void setName()
+    void setName(QString animal_name)
     {
+        name = animal_name;
     }
     
-    std::string getSpecies()
+    QString getSpecies()
     {
         return species;
     }
     
-    void setSpecies()
+    void setSpecies(QString animal_species)
     {
+        species = animal_species;
     }
     
     int getPawNumber()
@@ -48,7 +51,8 @@ public:
         return paw_number;
     }
     
-    void setPawNumber()
+    void setPawNumber(QString animal_paw)
     {
+        paw_number = animal_paw;
     }
 };
