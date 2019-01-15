@@ -4,6 +4,7 @@
 #include <QLineEdit>
 #include <QComboBox>
 #include <QPushButton>
+#include <QGridLayout>
 #include <QHBoxLayout>
 #include <QVBoxLayout>
 #include <QMessageBox>
@@ -31,8 +32,12 @@ MainWindow::MainWindow(QWidget *parent)
     cancel_button = new QPushButton(tr("C"));
     save_button->hide();
     cancel_button->hide();
+    
+    QGridLayout *layoutLeft = new QGridLayout;
+    layoutLeft->addWidget(name_label,0,0,Qt::AlignLeft);
+    layoutLeft->addWidget(name_line,0,1,Qt::AlignLeft);
 
-    QHBoxLayout *layoutName = new QHBoxLayout;
+    /*QHBoxLayout *layoutName = new QHBoxLayout;
     layoutName->addWidget(name_label);
     layoutName->addWidget(name_line);
 
@@ -59,21 +64,20 @@ MainWindow::MainWindow(QWidget *parent)
     layoutNEButtons->addLayout(layoutButtons);
 
     QHBoxLayout *layoutPhone = new QHBoxLayout;
-    layoutPhone->addStretch();
     layoutPhone->addWidget(phone_label);
     layoutPhone->addWidget(phone_line);
     layoutPhone->addWidget(phone_type_combobox);
-    layoutPhone->addStretch();
 
     QVBoxLayout *layout = new QVBoxLayout;
     layout->addLayout(layoutNEButtons);
     layout->addLayout(layoutPhone);
-
+    */
+    
     connect(edit_button, SIGNAL(clicked()), this, SLOT(editOn()));
     connect(save_button, SIGNAL(clicked()), this, SLOT(editSave()));
     connect(cancel_button, SIGNAL(clicked()), this, SLOT(editCancel()));
 
-    widget->setLayout(layout);
+    //widget->setLayout(layout);
     setWindowTitle(tr("Phonebook - Incomplete"));
     setCentralWidget(widget);
 }
