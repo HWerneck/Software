@@ -31,13 +31,13 @@ MainWindow::MainWindow(QWidget *parent)
 
     //connect(list, SIGNAL(currentRowChanged(int)), stacked, SLOT(setCurrentIndex(int)));
 
-    QGridLayout *layoutRight = new QGridLayout;
+    layoutRight = new QGridLayout();
     layoutRight->addWidget(id_line, 0, 0, Qt::AlignLeft);
     layoutRight->addWidget(name_line, 0, 1, Qt::AlignLeft);
     layoutRight->addWidget(species_line, 1, 0, Qt::AlignLeft);
     layoutRight->addWidget(paw_line, 1, 1, Qt::AlignLeft);
     
-    QHBoxLayout *layout = new QHBoxLayout;
+    layout = new QHBoxLayout();
     layout->addWidget(list);
     layout->addWidget(layoutRight);
 
