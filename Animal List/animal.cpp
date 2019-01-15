@@ -25,7 +25,7 @@ public:
     {
     }
     
-    string getName()
+    std::tring getName()
     {
     }
     
@@ -33,7 +33,7 @@ public:
     {
     }
     
-    string getSpecies()
+    std::string getSpecies()
     {
     }
     
