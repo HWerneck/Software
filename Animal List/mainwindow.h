@@ -20,6 +20,8 @@ public:
     ~MainWindow();
 
 private slots:
+    void add_Animal();
+    void delete_Animal(int list_index);
     void editButton_clicked();
     void saveButton_clicked();
     void cancelButton_clicked();
