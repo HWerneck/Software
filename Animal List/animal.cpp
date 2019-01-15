@@ -8,9 +8,9 @@ class Animal
     int paw_number;
 
 public:
-    Animal()
+    Animal(int animal_id)
     {
-        id = 0;
+        id = animal_id;
         name = "Animal";
         species = "Animal animale";
         paw_number = 0;
