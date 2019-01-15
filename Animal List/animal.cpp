@@ -2,7 +2,6 @@
 
 class Animal
 {
-private:
     int id;
     std::string name;
     std::string species;
@@ -12,21 +11,23 @@ public:
     Animal()
     {
         id = 0;
-        name = "";
-        species = "";
+        name = "Animal";
+        species = "Animal animale";
         paw_number = 0;
     }
     
     int getID()
     {
+        return id;
     }
     
     void setID()
     {
     }
     
-    std::tring getName()
+    std::string getName()
     {
+        return name;
     }
     
     void setName()
@@ -35,6 +36,7 @@ public:
     
     std::string getSpecies()
     {
+        return species;
     }
     
     void setSpecies()
@@ -43,6 +45,7 @@ public:
     
     int getPawNumber()
     {
+        return paw_number;
     }
     
     void setPawNumber()
