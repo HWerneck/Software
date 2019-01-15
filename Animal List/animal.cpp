@@ -16,4 +16,36 @@ public:
         species = "";
         paw_number = 0;
     }
+    
+    int getID()
+    {
+    }
+    
+    void setID()
+    {
+    }
+    
+    string getName()
+    {
+    }
+    
+    void setName()
+    {
+    }
+    
+    string getSpecies()
+    {
+    }
+    
+    void setSpecies()
+    {
+    }
+    
+    int getPawNumber()
+    {
+    }
+    
+    void setPawNumber()
+    {
+    }
 };
