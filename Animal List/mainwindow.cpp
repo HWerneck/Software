@@ -8,7 +8,6 @@
 #include <QHBoxLayout>
 #include <QVBoxLayout>
 #include <QMessageBox>
-#include <QThread>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -69,7 +68,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     connect(edit_button, SIGNAL(clicked()), this, SLOT(editButton_clicked()));
     connect(save_button, SIGNAL(clicked()), this, SLOT(saveButton_clicked()));
-    connect(edit_button, SIGNAL(clicked()), this, SLOT(cancelButton_clicked()));
+    connect(cancel_button, SIGNAL(clicked()), this, SLOT(cancelButton_clicked()));
 
     layoutRight1 = new QHBoxLayout;
     layoutRight1->addStretch();
@@ -140,17 +139,12 @@ void MainWindow::editButton_clicked()
     species_line->setEnabled(true);
     paw_line->setEnabled(true);
 
-    QThread::sleep(2);
-
     save_button->show();
     cancel_button->show();
 }
 
 void MainWindow::saveButton_clicked()
 {
-
-    QMessageBox::information(this, "Função Executada", "Função de salvar executada!");
-
     save_button->hide();
     cancel_button->hide();
 
@@ -169,9 +163,6 @@ void MainWindow::saveButton_clicked()
 
 void MainWindow::cancelButton_clicked()
 {
-
-    QMessageBox::information(this, "Função Executada", "Função de cancelar executada!");
-
     save_button->hide();
     cancel_button->hide();
 
