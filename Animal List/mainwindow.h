@@ -4,7 +4,9 @@
 #include <QMainWindow>
 
 class QWidget;
-class QListWidget;
+class QAbstractTableModel;
+class QTreeView;
+//class QListWidget;
 class QPushButton;
 class QLineEdit;
 class QGridLayout;
@@ -29,9 +31,12 @@ private slots:
 private:
     QWidget *widget;
 
+    QAbstractTableModel *model;
+    QTableView *list;
+    //QListWidget *list;
+
     QPushButton *add_button;
     QPushButton *delete_button;
-    QListWidget *list;
 
     QLineEdit *id_line;
     QLineEdit *name_line;
