@@ -1,7 +1,9 @@
 #include "mainwindow.h"
 //#include "animal.cpp"
 #include <QWidget>
-#include <QListWidget>
+#include <QAbstractTableModel>
+#include <QTableView>
+//#include <QListWidget>
 #include <QPushButton>
 #include <QLineEdit>
 #include <QGridLayout>
@@ -21,8 +23,14 @@ MainWindow::MainWindow(QWidget *parent)
     delete_button->setMinimumSize(30,30);
     delete_button->setMaximumSize(30,30);
 
-    list = new QListWidget;
-    list->addItem(tr("Dragon"));
+    model = new QAbstractTableModel;
+    
+    list = new QTableView;
+    list->setModel(model);
+    
+    list->model()->data
+    //list = new QListWidget;
+    //list->addItem(tr("Dragon"));
 
     layoutLeft1 = new QHBoxLayout;
     layoutLeft1->addStretch();
