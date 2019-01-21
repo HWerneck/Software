@@ -24,10 +24,14 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp
+        mainwindow.cpp \
+        animal.cpp \
+    animalmodel.cpp
 
 HEADERS += \
-        mainwindow.h
+        mainwindow.h \
+        animal.h \
+    animalmodel.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
