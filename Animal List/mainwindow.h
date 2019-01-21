@@ -4,11 +4,11 @@
 #include <QMainWindow>
 
 class QWidget;
-class QAbstractTableModel;
-class QTreeView;
+class QTableView;
 //class QListWidget;
 class QPushButton;
 class QLineEdit;
+class QComboBox;
 class QGridLayout;
 class QHBoxLayout;
 class QVBoxLayout;
@@ -23,6 +23,7 @@ public:
 
 private slots:
     void add_Animal();
+    void check_Animal();
     void delete_Animal(int list_index);
     void editButton_clicked();
     void saveButton_clicked();
@@ -31,17 +32,16 @@ private slots:
 private:
     QWidget *widget;
 
-    QAbstractTableModel *model;
-    QTableView *list;
-    //QListWidget *list;
-
     QPushButton *add_button;
     QPushButton *delete_button;
+    QTableView *list;
+    //QListWidget *list;
 
     QLineEdit *id_line;
     QLineEdit *name_line;
     QLineEdit *species_line;
-    QLineEdit *paw_line;
+    //QLineEdit *paw_line;
+    QComboBox *type_per_environment;
 
     QPushButton *edit_button;
     QPushButton *save_button;
