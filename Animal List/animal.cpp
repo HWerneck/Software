@@ -1,58 +1,53 @@
+#include "animal.h"
 #include <QString>
 
-class Animal
+Animal::Animal(int id) :
+    id (id), name (""), species (""), type (Type::Terrestrial)
 {
-    int id;
-    QString name;
-    QString species;
-    int paw_number;
 
-public:
-    Animal(int animal_id)
-    {
-        id = animal_id;
-        name = "Animal";
-        species = "Animal animale";
-        paw_number = 0;
-    }
-    
-    int getID()
-    {
-        return id;
-    }
-    
-    void setID(animal_id)
-    {
-        id = animal_id;
-    }
-    
-    QString getName()
-    {
-        return name;
-    }
-    
-    void setName(QString animal_name)
-    {
-        name = animal_name;
-    }
-    
-    QString getSpecies()
-    {
-        return species;
-    }
-    
-    void setSpecies(QString animal_species)
-    {
-        species = animal_species;
-    }
-    
-    int getPawNumber()
-    {
-        return paw_number;
-    }
-    
-    void setPawNumber(QString animal_paw)
-    {
-        paw_number = animal_paw;
-    }
-};
+}
+
+Animal::~Animal()
+{
+
+}
+
+int Animal::getID()
+{
+    return this->id;
+}
+
+void Animal::setID(int animal_id)
+{
+    this->id = animal_id;
+}
+
+QString Animal::getName()
+{
+    return this->name;
+}
+
+void Animal::setName(QString animal_name)
+{
+    this->name = animal_name;
+}
+
+QString Animal::getSpecies()
+{
+    return this->species;
+}
+
+void Animal::setSpecies(QString animal_species)
+{
+    this->species = animal_species;
+}
+
+int Animal::getType()
+{
+    return this->type;
+}
+
+void Animal::setType(int animal_type)
+{
+    this->type = animal_type;
+}
