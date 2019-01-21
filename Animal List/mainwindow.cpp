@@ -1,11 +1,11 @@
 #include "mainwindow.h"
-//#include "animal.cpp"
+#include "animal.h"
 #include <QWidget>
-#include <QAbstractTableModel>
-#include <QTableView>
 //#include <QListWidget>
+#include <QTableView>
 #include <QPushButton>
 #include <QLineEdit>
+#include <QComboBox>
 #include <QGridLayout>
 #include <QHBoxLayout>
 #include <QVBoxLayout>
@@ -16,21 +16,19 @@ MainWindow::MainWindow(QWidget *parent)
 {
     widget = new QWidget();
 
+    list = new QTableView;
+    //list->setModel(model);
+    list->setSelectionBehavior(QAbstractItemView::SelectRows);
+    list->setShowGrid(false);
+    //list = new QListWidget;
+    //list->addItem(tr("Dragon"));
+
     add_button = new QPushButton(tr("A"));
     add_button->setMinimumSize(30,30);
     add_button->setMaximumSize(30,30);
     delete_button = new QPushButton(tr("D"));
     delete_button->setMinimumSize(30,30);
     delete_button->setMaximumSize(30,30);
-
-    model = new QAbstractTableModel;
-    
-    list = new QTableView;
-    list->setModel(model);
-    
-    list->model()->data
-    //list = new QListWidget;
-    //list->addItem(tr("Dragon"));
 
     layoutLeft1 = new QHBoxLayout;
     layoutLeft1->addStretch();
@@ -47,16 +45,24 @@ MainWindow::MainWindow(QWidget *parent)
     id_line->setEnabled(false);
     name_line = new QLineEdit();
     name_line->setMinimumSize(250,30);
-    name_line->setMaximumSize(250,30);
+    //name_line->setSizePolicy(QSizePolicy::Policy horizontal);
     name_line->setEnabled(false);
     species_line = new QLineEdit();
     species_line->setMinimumSize(250,30);
     species_line->setMaximumSize(250,30);
     species_line->setEnabled(false);
-    paw_line = new QLineEdit();
-    paw_line->setMinimumSize(50,30);
-    paw_line->setMaximumSize(50,30);
-    paw_line->setEnabled(false);
+    //paw_line = new QLineEdit();
+    //paw_line->setMinimumSize(50,30);
+    //paw_line->setMaximumSize(50,30);
+    //paw_line->setEnabled(false);
+    type_per_environment = new QComboBox;
+    type_per_environment->setMinimumSize(50,30);
+    //type_per_environment->setSizeAdjustPolicy(QAbstractScrollArea::AdjustToContents);
+    type_per_environment->addItem("Terrestrial");
+    type_per_environment->addItem("Aquatic");
+    type_per_environment->addItem("Aerial");
+    type_per_environment->setEditable(false);
+    type_per_environment->setEnabled(false);
 
     edit_button = new QPushButton(tr("E"));
     edit_button->setMinimumSize(30,30);
@@ -74,6 +80,8 @@ MainWindow::MainWindow(QWidget *parent)
     //dummyAnimal = new Animal(0, Animal, animal animal, 0);
     //otherAnimal = new Animal(0, Dog, Canis lupus familiaris, 4); //for illustration!
 
+    connect(add_button, SIGNAL(clicked()), this, SLOT(add_Animal()));
+    connect(delete_button, SIGNAL(clicked()), this, SLOT(check_Animal()));
     connect(edit_button, SIGNAL(clicked()), this, SLOT(editButton_clicked()));
     connect(save_button, SIGNAL(clicked()), this, SLOT(saveButton_clicked()));
     connect(cancel_button, SIGNAL(clicked()), this, SLOT(cancelButton_clicked()));
@@ -90,7 +98,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     layoutRight3 = new QHBoxLayout;
     layoutRight3->addWidget(species_line);
-    layoutRight3->addWidget(paw_line);
+    layoutRight3->addWidget(type_per_environment);
 
     layoutRight = new QVBoxLayout;
     layoutRight->addLayout(layoutRight1);
@@ -126,9 +134,21 @@ void MainWindow::add_Animal()
     //list->clearSelection();
 }
 
+void MainWindow::check_Animal()
+{
+    int num = list->currentIndex().row();
+    if (!num)
+    {
+        QMessageBox::warning(this, "Animal List", "No animal selected!");
+    }
+    else
+    {
+        delete_Animal(num);
+    }
+}
+
 void MainWindow::delete_Animal(int list_index)
 {
-    //get list selected index
     //delete animal from the animal list based on index
     //list->refresh();
 }
@@ -145,7 +165,8 @@ void MainWindow::editButton_clicked()
     id_line->setEnabled(true);
     name_line->setEnabled(true);
     species_line->setEnabled(true);
-    paw_line->setEnabled(true);
+    //paw_line->setEnabled(true);
+    type_per_environment->setEnabled(true);
 
     save_button->show();
     cancel_button->show();
@@ -164,7 +185,8 @@ void MainWindow::saveButton_clicked()
     id_line->setEnabled(false);
     name_line->setEnabled(false);
     species_line->setEnabled(false);
-    paw_line->setEnabled(false);
+    //paw_line->setEnabled(false);
+    type_per_environment->setEnabled(false);
 
     edit_button->show();
 }
@@ -177,7 +199,7 @@ void MainWindow::cancelButton_clicked()
     id_line->clear();
     name_line->clear();
     species_line->clear();
-    paw_line->clear();
+    //paw_line->clear();
 
     //id_line = dummyAnimal.id;
     //name_line = dummyAnimal.name;
@@ -187,7 +209,13 @@ void MainWindow::cancelButton_clicked()
     id_line->setEnabled(false);
     name_line->setEnabled(false);
     species_line->setEnabled(false);
-    paw_line->setEnabled(false);
+    //paw_line->setEnabled(false);
+    type_per_environment->setEnabled(false);
 
     edit_button->show();
 }
+
+/*void MainWindow::updateTableView()
+{
+
+}*/
