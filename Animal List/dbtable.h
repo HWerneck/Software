@@ -1,9 +1,14 @@
 #ifndef DBTABLE_H
-#def DBTABLE_H
+#define DBTABLE_H
+
+#include <QTableView>
 
 class DBTable : QTableView
 {
+    Q_OBJECT
+    
+public:
+    int index();
+};
 
-}
-
-#endif
+#endif  //DBTABLE_H
