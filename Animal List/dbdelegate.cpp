@@ -1,4 +1,4 @@
-QLineDelegate::QLineDelegate(QTableView* tableView)
+DBDelegate::DBDelegate(QTableView* tableView)
 {
     int gridHint = tableView->style()->styleHint(QStyle::SH_Table_GridLineColor, new QStyleOptionViewItemV4());
     QColor gridColor = static_cast<QRgb>(gridHint);
@@ -6,7 +6,7 @@ QLineDelegate::QLineDelegate(QTableView* tableView)
     view = tableView;
 }
 
-void QLineDelegate::paint(QPainter* painter, const QStyleOptionViewItem& option,const QModelIndex& index)const
+void DBDelegate::paint(QPainter* painter, const QStyleOptionViewItem& option,const QModelIndex& index)const
 {
     QStyledItemDelegate::paint(painter, option, index);
     QPen oldPen = painter->pen();
