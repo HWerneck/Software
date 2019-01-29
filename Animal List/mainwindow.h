@@ -5,7 +5,6 @@
 
 class QWidget;
 class QTableView;
-//class QListWidget;
 class QPushButton;
 class QLineEdit;
 class QComboBox;
@@ -35,12 +34,10 @@ private:
     QPushButton *add_button;
     QPushButton *delete_button;
     QTableView *list;
-    //QListWidget *list;
 
     QLineEdit *id_line;
     QLineEdit *name_line;
     QLineEdit *species_line;
-    //QLineEdit *paw_line;
     QComboBox *type_per_environment;
 
     QPushButton *edit_button;
