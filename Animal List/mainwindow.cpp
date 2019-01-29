@@ -10,13 +10,14 @@
 #include <QVBoxLayout>
 #include <QMessageBox>
 
-MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
+MainWindow::MainWindow(QWidget *parent) :
+    QMainWindow(parent),
+    model(new QStandardItemModel())
 {
     widget = new QWidget();
-
+    
     list = new QTableView;
-    //list->setModel(model);
+    list->setModel(model);
     list->setSelectionBehavior(QAbstractItemView::SelectRows);
     list->setShowGrid(false);
     list->setItemDelegate(new DBDelegate(list))
