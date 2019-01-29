@@ -5,8 +5,10 @@
 
 class DBButton : public QPushButton
 {
+	Q_OBJECT
+
 public:
-	DBButton();
+	DBButton(QWidget *parent = 0);
 	~DBButton();
 	
 private:
