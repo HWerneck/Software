@@ -1,7 +1,7 @@
-class QLineDelegate : public QStyledItemDelegate
+class DBDelegate : public QStyledItemDelegate
 {
     public:
-    QLineDelegate(QTableView* tableView);
+    DBDelegate(QTableView* tableView);
 
     protected:
     void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const;
