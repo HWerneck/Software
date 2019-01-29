@@ -4,6 +4,7 @@
 #include <QMainWindow>
 
 class QWidget;
+class QStandardItemModel;
 class QTableView;
 class QPushButton;
 class QLineEdit;
@@ -31,10 +32,11 @@ private slots:
 private:
     QWidget *widget;
 
+    QStandardItemModel *model;
+    QTableView *list;
+    
     QPushButton *add_button;
     QPushButton *delete_button;
-    QTableView *list;
-    QStandardItemModel *model;
 
     QLineEdit *id_line;
     QLineEdit *name_line;
