@@ -1,6 +1,7 @@
 #include "dbbutton.cpp"
 
-DBButton::DBButton() : QPushButton()
+DBButton::DBButton(QWidget *parent) :
+	QPushButton(parent)
 {
 }
 
