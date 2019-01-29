@@ -19,6 +19,7 @@ MainWindow::MainWindow(QWidget *parent)
     //list->setModel(model);
     list->setSelectionBehavior(QAbstractItemView::SelectRows);
     list->setShowGrid(false);
+    list->setItemDelegate(new DBDelegate(list))
 
     add_button = new QPushButton(tr("A"));
     add_button->setMinimumSize(30,30);
