@@ -34,6 +34,7 @@ private:
     QPushButton *add_button;
     QPushButton *delete_button;
     QTableView *list;
+    QStandardItemModel *model;
 
     QLineEdit *id_line;
     QLineEdit *name_line;
