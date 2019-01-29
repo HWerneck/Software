@@ -6,6 +6,8 @@
 class DBButton : public QPushButton
 {
 public:
+	DBButton();
+	~DBButton();
 	
 private:
 	
