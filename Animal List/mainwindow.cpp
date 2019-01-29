@@ -117,8 +117,12 @@ MainWindow::~MainWindow()
 void MainWindow::add_Animal()
 {
     //add animal to data
-    //remake model
-    //list->refresh();
+    
+    QStandardItem *animal = new QStandardItem;
+    animal->setText("");    //get animal's name from data
+    model->appendRow(animal);
+    
+    //updateTableView();
     
     //id = (list->size() - 1);
     //dummyAnimal = new Animal (id);
@@ -212,7 +216,14 @@ void MainWindow::cancelButton_clicked()
     edit_button->show();
 }
 
-/*void MainWindow::updateTableView()
+/*
+When loading or updateTableView()
+QStandardItem *item = new QStandardItem;
+item->setText(dat_PokemonTable->names().at(i));
+item->setIcon(QIcon(QPixmap::fromImage(dat_PokemonTable->images().at(i))));
+pokemonModel->appendRow(item);
+
+void MainWindow::updateTableView()
 {
 
 }*/
