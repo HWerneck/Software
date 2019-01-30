@@ -10,6 +10,7 @@ class DBButton : public QPushButton
 public:
 	DBButton(QWidget *parent = 0);
 	~DBButton();
+	void paintEvent(QPaintEvent *event);
 	
 private:
 	
