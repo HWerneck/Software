@@ -44,4 +44,10 @@ QVariant AnimalModel::data(const QModelIndex &index, int role) const
 
 QVariant AnimalModel::headerData(int section, Qt::Orientation orientation, int role) const
 {
+	//No vertical header available
+	/*if (orientation::Qt vertical)
+		return QVariant();*/
+	if (role != Qt::DisplayRole)
+		return QVariant();
+	//return header data once I figur it out
 }
