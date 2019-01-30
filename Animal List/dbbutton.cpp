@@ -9,7 +9,7 @@ DBButton::~DBButton()
 {
 }
 
-void PushButton::paintEvent(QPaintEvent *event)
+void DBButton::paintEvent(QPaintEvent *event)
 {
   /*QPushButton::paintEvent(event);
  
