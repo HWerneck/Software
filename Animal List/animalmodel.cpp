@@ -37,7 +37,7 @@ QVariant AnimalModel::data(const QModelIndex &index, int role) const
 	}
 	else if (role == Qt::DecorationRole)
 	{
-		return QIcon animal_types.at(index.row());
+		return QIcon animal_types1.at(index.row());
 	}
 	return QVariant();
 }
