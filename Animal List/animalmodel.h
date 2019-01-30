@@ -11,5 +11,6 @@ public:
 
 private:
 	QStringList animal_names;
-	QVector<QIcon> animal_types;
+	QVector<QIcon> animal_types1;
+	QVector<QIcon> animal_types2;
 };
