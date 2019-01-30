@@ -12,13 +12,14 @@
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
-    model(new QStandardItemModel())
+    model(new AnimalModel())
 {
     widget = new QWidget();
     
     list = new QTableView;
     list->setModel(model);
     list->setSelectionBehavior(QAbstractItemView::SelectRows);
+	list->setAlternatingRowColors(false);
     list->setShowGrid(false);
     list->setItemDelegate(new DBDelegate(list))
 
@@ -99,7 +100,7 @@ MainWindow::MainWindow(QWidget *parent) :
     //otherAnimal = new Animal(0, Dog, Canis lupus familiaris, 4); //for illustration!
 
     connect(add_button, SIGNAL(clicked()), this, SLOT(add_Animal()));
-    connect(delete_button, SIGNAL(clicked()), this, SLOT(check_Animal()));
+    connect(delete_button, SIGNAL(clicked()), this, SLOT(delete_Animal()));
     connect(edit_button, SIGNAL(clicked()), this, SLOT(editButton_clicked()));
     connect(save_button, SIGNAL(clicked()), this, SLOT(saveButton_clicked()));
     connect(cancel_button, SIGNAL(clicked()), this, SLOT(cancelButton_clicked()));
@@ -116,45 +117,31 @@ MainWindow::~MainWindow()
 
 void MainWindow::add_Animal()
 {
-    //add animal to data
+    //Adding animal to the data list
     
+    
+    //Adding animal to the model
     QStandardItem *animal = new QStandardItem;
     animal->setText("");    //get animal's name from data
     model->appendRow(animal);
-    
-    //updateTableView();
-    
-    //id = (list->size() - 1);
-    //dummyAnimal = new Animal (id);
-    //list->append(dummyAnimal);
-    
-    //id_line->clear();
-    //name_line->clear();
-    //species_line->clear();
-    //type_per_environment->set(0);
-    
-    //list->refresh();
-    //list->clearSelection();
 }
 
-void MainWindow::check_Animal()
+void MainWindow::delete_Animal()
 {
     int num = list->currentIndex().row();
-    if (num < 0)
+	if (num < 0)
     {
         QMessageBox::warning(this, "Animal List", "No animal selected!");
     }
-    else
-    {
-        delete_Animal(num);
-    }
-}
-
-void MainWindow::delete_Animal(int list_index)
-{
-    //delete animal from the animal list based on index
-    //remake model based on data
-    //list->refresh();
+	else
+	{
+		//Deleting animal from the animal data list
+    
+    
+    	//Removing animal from the model
+    	model->removeRows(num, 1);
+	}
+    
 }
 
 void MainWindow::editButton_clicked()
